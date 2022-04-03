@@ -22,4 +22,7 @@ HC-SR04 ultrasonic sensor
 5V submersible water pump
 
 
+# Prototype
+https://user-images.githubusercontent.com/54182948/161429569-0658613f-3200-48f3-bdfd-a19aeefe6084.mp4
+
 
