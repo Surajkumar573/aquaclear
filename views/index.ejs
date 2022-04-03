@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>iot</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style type = "text/css">
+
+      .data{
+
+        display:none;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      .deepshd {
+        color: #e0dfdc;
+        
+        letter-spacing: .1em;
+        text-shadow: 0 -1px 0 #fff, 0 1px 0 #295597, 0 2px 0 #0e649e, 0 3px 0 #2a2a2a, 0 4px 0 #636161, 0 5px 0 #494848, 0 6px 0 #242424, 0 7px 0 #222, 0 8px 0 #202020, 0 9px 0 #1e1e1e, 0 10px 0 #1c1c1c, 0 11px 0 #1a1a1a, 0 12px 0 #181818, 0 13px 0 #161616, 0 14px 0 #141414, 0 15px 0 #121212, 0 22px 30px rgba(0, 0, 0, 0.9);
+      }
+      /* Style inputs */
+      input[type=text], select, textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        resize: vertical;
+      }
+      
+      input[type=submit] {
+        background-color: #04AA6D;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        cursor: pointer;
+      }
+      
+      input[type=submit]:hover {
+        background-color: #45a049;
+      }
+      
+      /* Style the container/contact section */
+      .container1 {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 10px;
+      }
+      
+      /* Create two columns that float next to eachother */
+      .column {
+        float: left;
+        width: 50%;
+        margin-top: 6px;
+        padding: 20px;
+      }
+      
+      /* Clear floats after the columns */
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      
+      /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+      @media screen and (max-width: 600px) {
+        .column, input[type=submit] {
+          width: 100%;
+          margin-top: 0;
+        }
+      }
+
+
+
+    </style>
+  </head>
+  <body>
+    <header>
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <div class="container-fluid">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-mdb-toggle="collapse"
+            data-mdb-target="#navbarExample01"
+            aria-controls="navbarExample01"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <i class="fas fa-bars"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarExample01">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item active">
+                <a class="nav-link" aria-current="page" href="#" style="font-size: 26px;">Home</a>
+              </li>
+              
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="/temperature" style="font-size: 26px;">Tables</a>
+              </li> -->
+
+              <li class="nav-item">
+                <a class="nav-link" href="/faq" style="font-size: 26px;">FAQs</a>
+              </li>
+              <li class="nav-item">
+            
+                <a class="nav-link" href="/aboutus" style="font-size: 26px;">AboutUs</a>
+              
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- Navbar -->
+    
+      <!-- Background image -->
+      <div
+        class="p-5 text-center bg-image"
+        style="
+          background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1-nmnPXZg_KtEmYdCEaLYKfU1BsIpE9WtVA&usqp=CAU');
+          height: 400px;
+          margin-top: 58px;
+        "
+      >
+        <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+          <div class="d-flex justify-content-center align-items-center h-100">
+            <div class="text-white" style="margin: 20px;">
+              <h1 class="mb-3 deepshd" style="font-size: 42px; font-family: Avantgarde, CenturyGothic, sans-serif;
+              text-align: center;
+            ">AquaClear</h1>
+              <h5 class="mb-3">We There For You</h5>
+              <a class="btn btn-outline-light btn-lg" href="/aboutus" role="button"
+              >Know More</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Background image -->
+    </header>
+
+
+
+
+    <!-- <div class></div>
+
+
+    <div class="" >
+      <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark" style="margin-bottom:100px;">
+        
+        <a class="navbar-brand" href="#"><svg style="margin-right:1rem;"xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-app-indicator" viewBox="0 0 16 16">
+          <path d="M5.5 2A3.5 3.5 0 0 0 2 5.5v5A3.5 3.5 0 0 0 5.5 14h5a3.5 3.5 0 0 0 3.5-3.5V8a.5.5 0 0 1 1 0v2.5a4.5 4.5 0 0 1-4.5 4.5h-5A4.5 4.5 0 0 1 1 10.5v-5A4.5 4.5 0 0 1 5.5 1H8a.5.5 0 0 1 0 1H5.5z"/>
+          <path d="M16 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+        </svg>Air Monitoring</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Records</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Previous Data
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Last Recorder Data</a>
+                <a class="dropdown-item" href="#">Last 3 Recorded Data</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Manual Edit</a>
+              </div>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+
+      <div class="" style="margin-bottom:100px;"></div>
+
+      <div class="row">
+        <div class="column" style ="width: 15%;">
+          <ul>
+            <div style="margin-top: 5px; margin-bottom: 35px;"><a href="https://www.google.com"><h5 class="btn" style="background-color: #3349FF; color:aliceblue;" >Dashboard</h5></a></div>
+            <div style="margin-top: 25px; margin-bottom: 35px;">
+              <form action="/getlastfive" method="post">
+                <button type="submit" class="btn" style="background-color: #3349FF; color: aliceblue;">Tables</button>
+              </form>
+              </div>
+              <div style="margin-top: 25px; margin-bottom: 35px;">
+                <form action="/graph" method="post">
+                  <button type="submit" class="btn btn-success" style="background-color: #3349FF; color:aliceblue;">Graph</button>
+                </form>
+                </div>
+              
+            <hr>
+            
+            <div style="margin-top: 25px; margin-bottom: 35px;"><a href="https://www.google.com"><h3 class="btn" style="background-color: #3349FF;color:aliceblue;"> Profiles</h3></a></div>
+            <div style="margin-top: 25px; margin-bottom: 35px;"><a href="https://www.google.com"><h3 class="btn btn-danger" style="background-color: #3349FF;color:aliceblue;">F.A.Q</h3></a></div>
+            <div style="margin-top: 25px; margin-bottom: 35px;"><a href="https://www.google.com"><h3 class="btn " style="background-color: #3349FF;color:aliceblue;">Contact</h3></a></div>
+            
+          </ul>
+        </div>
+        <div class = "column" style ="width: 85%;"> 
+          <div class="row">
+              <div class="column" style="width:59%;" >
+                <div class="jumbotron">
+                  <h1 class=" display-4 ml3" style=" text-align: center; font-weight: 900; font-size: 3.5em; margin-bottom: 50px;">Welcome to the Air Quality Monitoring System</h1>
+                  <p class="lead" style="margin-top: 10px;" >This is an Air Quality MOnitoring website designed to find the detailed information of the air indexing.</p>
+                  <hr class="my-4">
+                  <p>This Website is created by the RVR group and based on the data collected by our hardware created by us only.</p>
+                  <p class="lead">
+                    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+                  </p>
+                </div>
+              </div>
+
+
+            
+              
+              <div class="column" style="width:11%;">
+               
+                
+                <div class="row">
+                  <div style="text-align: left;" id="piechart"></div>
+                </div>
+                
+              </div>
+
+
+          </div> -->
+          
+
+
+          <div class="" style="text-align: center;">
+            <h1 class="container1" style="text-align: center; margin: 35px 0px; color:rgb(46, 130, 240)">OUR MISSION</h1>
+<div class="row">
+  <h3 style="text-align: center; padding:2% 8%; color:rgb(44, 2, 53);   ">Judicious use of water resources has become an important topic as our water resources become more and more scarce. Our aim is to check whether the water to be supplied to our homes is ready to drink or not. It aims to improve the water utilization in households as in preventing excess use of Reverse Osmosis(RO) and prevent highly contaminated water from enter the house water-storage. </h3>
+          </div>
+            
+          <div class="" style="text-align: left;">
+            <h1 class="container1" style="text-align: center; margin: 35px 0px; color:rgb(46, 130, 240)">SERVICES</h1>
+<div class="row">
+          </div>
+            
+            <div class="row" style="padding: 2% 4%;">
+
+              <div class="column" style="width:33%; height:200px; ">
+                
+                <div class="card" style="width: 22rem; height:200px;">
+                  <img class="card-img-top"style="height:250px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSR7gHYTZ-6AE9WOA2hdM0SbnOPRC8JGFZA-A&usqp=CAU">
+                  <!-- <img class="card-img-top"style="height:250px;" src="../images/tds.jpg"> -->
+                  <div class="card-body">
+                    <h5 class="card-title">TDS</h5>
+                    <p class="card-text">Total Dissolved Solids (TDS) in water are some organic and inorganic materials, which include minerals and ions that are dissolved in a particular quantity in water</p>
+                    <form action="/humidity" method  = "post">
+                      <label for="fname">Get the latest values from the server</label><br>
+                      <button type="submit" class="btn btn-success">click</button>
+                    </form>
+                  </div>
+                </div>
+                
+              </div>
+              <div class="column" style="width:33%; height:200px; ">
+                <div class="card" style="width: 22rem; height:200px;">
+                  <img class="card-img-top" class="height:250px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGZQSWaEv2n5cuvJ8vKKNqxvnSWgos_WizMg&usqp=CAU" alt="Card image cap">
+                  <div class="card-body">
+                    <h5 class="card-title">Temperature </h5>
+                    <p class="card-text">Temperature is a physical quantity that expresses hot and cold. It is the manifestation of thermal energy, present in all matter, which is the source of the occurrence of heat</p>
+                    <form action="/temperature" method  = "post">
+                      <label for="fname">Get the latest values from the server</label><br>
+                      <button type="submit" class="btn btn-success">click</button>
+                    </form>
+                  </div>
+                </div>
+           
+              </div>
+              <!-- <div class="column" style="width:23%; height:200px;">
+                <div class="card" style="width: 22rem; height:200px;">
+                  <img class="card-img-top" style="height:150px;" src="https://www.poison.org/-/media/images/shared/articles/2007-dec/carbon-monoxide-poisoning-1.jpg">
+                  <div class="card-body">
+                    <h5 class="card-title">Carbon Monoxide</h5>
+                    <p class="card-text">Carbon monoxide (CO) is an odorless, colorless gas formed by the incomplete combustion of fuels. When people are exposed to CO gas, the CO molecules will displace the oxygen in their bodies and lead to poisoning.</p>
+                    <form action="/covalue" method  = "post">
+                      <label for="fname">Get the latest values from the server</label><br>
+                      <button type="submit" class="btn btn-success">click</button>
+                    </form>
+                  </div>
+                </div>
+                
+              </div> -->
+              
+              <div  class ="column" style="width:33% ;height: 200px">
+                <form action="/" method  = "post">
+                  <label for="fname"><h4>Enter the no of enteries you want</h4></label><br>
+                  <input type="text"  class="form-control"name="values"><br>
+                  <button class="btn btn-lg btn-primary"type="submit" style="margin-top: 10px;">Retrieve</button>
+                </form>
+                <h4 style="margin-top: 25px;">
+                  Here you can see the last few number of records of TDS and Temperature.
+                </h4>
+              </div>
+                
+              
+            </div>
+
+            <br>
+            <!-- <div class="row" style="height:200px; margin-top: 40px;">
+              </div> -->
+
+            
+            <!-- <div class="row" style="padding: 15% 40% 5% 40%;"> 
+              <h1 class="container" style="text-align: center; margin: 20px; color:rgb(46, 130, 240)">QUERY</h1>
+<div class="row">
+                <div  class ="column" style="width:92% ;height: 200px;">
+                  <form action="/graphs" method  = "post">
+                    <label for="fname"><h4>Enter the number of enteries you want</h4></label><br>
+                    <input type="text"  class="form-control"name="values"><br>
+                    <button class="btn btn-lg btn-primary"type="submit" style="margin-top: 10px;">Retrieve</button>
+                  </form>
+                  <h4 style="margin-top: 25px;">
+                    Here you get the data in the pictorial representation. You can Enter the last few number of recoreds you want to retrieve your data.
+                  </h4>
+                </div>
+                 -->
+                
+                <!-- <div class="column" style="width:23%; height:200px; margin-top: 30px; ">
+                  <div class="card" style="width: 22rem;">
+                    <img class="card-img-top" class="height:50px; width:250px;" src="https://thumbs.dreamstime.com/b/old-lpg-gas-tank-rusty-decay-old-lpg-gas-tank-red-rust-decay-causing-gas-leakage-to-be-dangerous-realistic-file-159325663.jpg" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">LPG Gas Level</h5>
+                      <p class="card-text">Which gas is in LPG?
+                        LPG is composed hydrocarbons containing three or four carbon atoms. The normal components of LPG thus, are propane (C3H8) and butane (C4H10). Small concentrations of other hydrocarbons may also be present.</p>
+                      <form action="/lpggas" method  = "post">
+                        <label for="fname">Get the latest values from the server</label><br>
+                        <button type="submit" class="btn btn-success">click</button>
+                      </form>
+                      
+                    </div>
+                  </div>
+             
+                </div> -->
+
+
+
+                <!-- <div class="column" style="width:23%; height:200px; margin-top: 30px; ">
+                  <div class="card" style="width: 22rem;">
+                    <img class="card-img-top" class="height:100px; width:250px;" src="https://www.financialexpress.com/wp-content/uploads/2018/12/cats-241.jpg">
+                    <div class="card-body">
+                      <h5 class="card-title">PM 2.5 Level</h5>
+                      <p class="card-text">Fine particulate matter (PM2.5) is an air pollutant that is a concern for people's health when levels in air are high. PM2.5 are tiny particles in the air that reduce visibility and cause the air to appear hazy when levels are elevated.</p>
+                      <form action="/pmvalue" method  = "post">
+                        <label for="fname">Get the latest values from the server</label><br>
+                        <button type="submit" class="btn btn-success">click</button>
+                      </form>
+                    </div>
+                  </div>
+             
+                </div> -->
+
+                
+
+
+<!-- 
+            </div>
+
+            
+            <br>
+
+            
+
+
+            
+
+            
+          </div>
+           
+        </div> -->
+        <br><br><br><br>
+        <!-- Gallery -->
+        <div style="padding: 30px;">
+          <h1 class="container1" style="text-align: center; margin: 150px 50px 50px 50px; color:rgb(46, 130, 240)">HARDWARE</h1>
+<div class="row">
+  <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+    <img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdxcGYfKOug0SppkjF37fInq2rZrPG70HIHg&usqp=CAU"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt="Boat on Calm Water"
+    />
+
+    
+  </div>
+
+  <div class="col-lg-4 mb-4 mb-lg-0">
+    <img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHW9RcRWzWuzs-Coo5aJUhr8qSMKqkCElkjA&usqp=CAU"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt="Waves at Sea"
+    />
+
+   
+  </div>
+
+  <div class="col-lg-4 mb-4 mb-lg-0">
+    <img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDSWbtZMhOScUOeLOFpL3RJnT4_lnEMdSZqQ&usqp=CAU"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt="Waves at Sea"
+    />
+
+   </div>
+  </div>
+</div>
+<!-- Gallery -->
+      </div>
+      <div class="container" style="background-color: rgb(221, 219, 219);">
+        <div style="text-align:center;">
+          <h2>Contact Us</h2>
+          <p>Swing by for a cup of coffee, or leave us a message:</p>
+        </div>
+        <div class="row">
+          <div class="column">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt6QRFMFLjuGFUNpdACrSqvONw685THQL-Dg&usqp=CAU" style="width:100%; height: 300px;">
+          </div>
+          <div class="column">
+            <form action="/action_page.php">
+              <label for="fname">First Name</label>
+              <input type="text" id="fname" name="firstname" placeholder="Your first name..">
+              <label for="lname">Last Name</label>
+              <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+              <!-- <label for="country">Country</label>
+              <select id="country" name="country">
+                <option value="australia">Australia</option>
+                <option value="canada">Canada</option>
+                <option value="usa">USA</option>
+              </select> -->
+              <label for="subject">Subject</label>
+              <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
+              <input type="submit" value="Submit">
+            </form>
+          </div>
+        </div>
+      </div>
+<br>
+<br>
+
+      <footer class="text-center text-white" style="background-color: #20384d;">
+        <!-- Grid container -->
+        <div class="container p-4">
+          <!-- Section: Iframe -->
+          <section class="">
+            <div class="row d-flex justify-content-center">
+              <div class="col-lg-6">
+                <div class="ratio ratio-25x16">
+                  <!-- <iframe
+                    class="shadow-1-strong rounded"
+                    src="https://www.youtube.com/embed/vlDzYIIOYmM"
+                    title="YouTube video"
+                    allowfullscreen
+                  ></iframe> -->
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Section: Iframe -->
+        </div>
+        <!-- Grid container -->
+      
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+          © 2022 Copyright:
+          <a class="text-white" href="https://mdbootstrap.com/">AquaClear</a>
+        </div>
+        <!-- Copyright -->
+      </footer>
+
+
+
+
+
+
+      <input class  = "data" id = "data1" value  = <%= data[1].field1%>>
+    <input class  = "data" id = "data2" value  = <%= data[1].field2 %>>
+    <input class  = "data" id = "data3" value  = <%= data[1].field3 %>>
+    <input class  = "data" id = "data4" value  = <%= data[1].field4 %>>
+    <input class  = "data" id = "data5" value  = <%= data[1].field5 %>>
+       
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+    <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script type="text/javascript">
+// Load google charts
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+// Draw the chart and set the chart values
+function drawChart() {
+  var temp  = document.getElementById("data1").value;
+  var humidity =  document.getElementById("data2").value;
+  var pm2 =  document.getElementById("data3").value;
+  var co =  document.getElementById("data4").value;
+  var lpg  =  document.getElementById("data5").value;
+
+  var da= google.visualization.arrayToDataTable([
+  ['Task', 'Hours per Day'],
+  ['PM 2.5', parseInt(pm2)],
+  ['CO', parseInt(co)],
+  ['LPG Gas Detection', parseInt(lpg)],
+  ['Fresh Air', 10000],
+
+]);
+
+// console.log(data);
+// console.log(d);
+  // Optional; add a title and set the width and height of the chart
+  var options = {'title':'Air Quality Indexing', 'width':900, 'height':600};
+
+  // Display the chart inside the <div> element with id="piechart"
+  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+  chart.draw(da, options);
+}
+
+var textWrapper = document.querySelector('.ml3');
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+anime.timeline({loop: true})
+  .add({
+    targets: '.ml3 .letter',
+    opacity: [0,1],
+    easing: "easeInOutQuad",
+    duration: 2250,
+    delay: (el, i) => 150 * (i+1)
+  }).add({
+    targets: '.ml3',
+    opacity: 0,
+    duration: 1000,
+    easing: "easeOutExpo",
+    delay: 1000
+  });
+</script>
+  </body>
+</html>
